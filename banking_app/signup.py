@@ -35,3 +35,14 @@ def signup(username, password, email):
     Returns:
     - bool: `True` if the signup is successful, otherwise raises a `ValueError` for invalid input.
     """
+
+    special_characters = "!@#$%^&*(/)[]{}/:;‘’~_|-+=<>?,"
+
+    if len(username, password, email) < 8 and username and password and email == "":
+        raise ValueError
+    
+
+
+    for character in username, password:
+        if character in special_characters:
+            raise ValueError

@@ -1,4 +1,5 @@
 # login.py - Placeholder for login functionality
+import csv
 
 def login(username, password):
     """
@@ -33,3 +34,26 @@ def login(username, password):
     - bool: `True` if login is successful, `False` if login fails, or raises a `ValueError` for invalid input.
 
     """
+
+    special_characters = "!@#$%^&*(/)[]{}/:;‘’~_|-+=<>?,"
+
+    if len(username) < 3 and username == "":
+        raise ValueError
+    
+
+
+    for character in username, password:
+        if character in special_characters:
+            raise ValueError
+    
+    csv_file = "database.csv"
+
+    with open(csv_file, mode="r", newline="") as file:
+        csvreader = csv.reader(file)
+        for row in csvreader:
+            if row in csvreader:
+                if row[0] == username and row[1] == password:
+                    return False
+    
+
+

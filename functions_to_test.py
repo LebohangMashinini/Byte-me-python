@@ -1,13 +1,20 @@
 # Placeholder functions for Python basics, to be implemented later
 
 def add_numbers(a, b):
-    pass
+    add = a + b
+    if not type(add) is int:
+        raise TypeError
+    else:
+        return add
 
 def find_maximum(a, b, c):
-    pass
+    return max(a, b, c)
 
 def is_palindrome(string):
-    pass
+    if string == string[::-1]:
+        return True
+    else:
+        return False
 
 def count_word_occurrences(text, word):
     pass
@@ -16,19 +23,35 @@ def read_file_lines(filepath):
     pass
 
 def factorial(n):
-    pass
+    count = 1
+    for i in range(1, n + 1):
+        count *= 1
+    return count
 
 def is_prime(n):
-    pass
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+        return True
 
 def sort_numbers(numbers):
     pass
 
 def factorial(n):
-    pass
+    count = 1
+    for i in range(1, n + 1):
+        count *= 1
+    return count
 
 def fibonacci(n):
-    pass
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 def tower_of_hanoi(n, source, auxiliary, target):
     
